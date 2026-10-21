@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Package, DollarSign, Clock, AlertCircle, Search, Filter } from 'lucide-react';
+import { Package, DollarSign, Clock, AlertCircle, Search, Filter, Hash } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useMockDataStore } from '@/store/mockDataStore';
 import { formatCurrency } from '@/utils/format';
@@ -245,6 +245,21 @@ export default function DashboardPage() {
                       {asset.createdAt ? new Date(asset.createdAt).toLocaleDateString() : '—'}
                     </span>
                   </div>
+                  {asset.tokenId && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      {/^\d+$/.test(asset.tokenId) ? (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          <Hash size={11} />
+                          Token {asset.tokenId}
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-500">
+                          <Hash size={11} />
+                          demo
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

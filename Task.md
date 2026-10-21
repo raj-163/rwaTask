@@ -4,43 +4,43 @@ Use this list to check the basic setup and Solidity workflow. After the chain ta
 
 ## 1. Basic environment
 
-- [ ] Node.js 20+ (`node -v`)
-- [ ] Dependencies install (`npm install`)
-- [ ] App starts (`npm run dev`)
-- [ ] Frontend opens at http://localhost:5173/
-- [ ] API health check: http://localhost:3001/api/health
-- [ ] Home, Sign In, and Dashboard load
+- [x] Node.js 20+ (`node -v`)
+- [x] Dependencies install (`npm install`)
+- [x] App starts (`npm run dev`)
+- [x] Frontend opens at http://localhost:5173/
+- [x] API health check: http://localhost:3001/api/health
+- [x] Home, Sign In, and Dashboard load
 
 ## 2. Solidity environment
 
-- [ ] Contracts compile (`npm run compile`)
-- [ ] Local chain runs (`npm run chain`) on `http://127.0.0.1:8545`, chain id `31337`
-- [ ] Contracts deploy (`npm run deploy:local`)
-- [ ] `src/config/contracts.json` has non-empty `kyc`, `marketplace`, `token`, and `compliance`
-- [ ] Restart `npm run dev` after deploy so Vite picks up the new addresses
+- [x] Contracts compile (`npm run compile`)
+- [x] Local chain runs (`npm run chain`) on `http://127.0.0.1:8545`, chain id `31337`
+- [x] Contracts deploy (`npm run deploy:local`)
+- [x] `src/config/contracts.json` has non-empty `kyc`, `marketplace`, `token`, and `compliance`
+- [x] Restart `npm run dev` after deploy so Vite picks up the new addresses
 
 ## 3. Wallet for frontend verification
 
-- [ ] MetaMask has **Hardhat Local**
+- [x] MetaMask has **Hardhat Local**
   - RPC: `http://127.0.0.1:8545`
   - Chain ID: `31337`
   - Currency: `ETH`
-- [ ] Import Hardhat Account #0 (the first key printed by `npm run chain`)
-- [ ] Sign in on http://localhost:5173/ with that wallet
-- [ ] Dashboard shows the wallet address and chain `31337` or Hardhat Local
+- [x] Import Hardhat Account #0 (the first key printed by `npm run chain`)
+- [x] Sign in on http://localhost:5173/ with that wallet
+- [x] Dashboard shows the wallet address and chain `31337` or Hardhat Local
 
 ## 4. Verify Solidity in the frontend
 
 Do these in the browser after deploy. Each step should produce a MetaMask transaction if contracts are configured.
 
-- [ ] Open **Asset Creation** (`/asset-creation`)
-- [ ] The page says contracts are live (or demo mode if `contracts.json` is still empty)
-- [ ] Submit a new asset (title, category, price, optional image, validator)
-- [ ] Approve KYC `selfVerify` if MetaMask asks
-- [ ] Approve `createAsset`
-- [ ] Dashboard shows the new asset
-- [ ] Marketplace and Explorer also show the same asset
-- [ ] Asset card / dashboard shows an on-chain token id (number), not only `demo-...`
+- [x] Open **Asset Creation** (`/asset-creation`)
+- [x] The page says contracts are live (or demo mode if `contracts.json` is still empty)
+- [x] Submit a new asset (title, category, price, optional image, validator)
+- [x] Approve KYC `selfVerify` if MetaMask asks
+- [x] Approve `createAsset`
+- [x] Dashboard shows the new asset
+- [x] Marketplace and Explorer also show the same asset
+- [x] Asset card / dashboard shows an on-chain token id (number), not only `demo-...`
 
 
 ## Evaluation
